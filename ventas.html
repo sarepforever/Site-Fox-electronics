@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Ventas - Fox-Electronics</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fox Electronics</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Administrador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ventas.html">Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Utilidades.html">Utilidades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/contact-bg.png')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>Ventas</h1>
+                        <!--<span class="subheading">Have questions? I have answers.</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-6 mx-auto" style="text-align:center">
+                <h3> Nueva Venta</h3>
+            </div>
+            <div class="col-md-12 mx-auto" style="text-align:center"> <label>Porfavor ingrese el codigo del producto para continiar</label></div>
+            <div class="col-md-4 mx-auto">
+                <input type="text" class="form-control" id="txtCodeProducto" placeholder="Igrese Codigo del Producto" onchange="validarCode()" onkeyup="validarCode()">
+
+            </div>
+            <div class="col-md-12 mx-auto" style="text-align:center">  <p id="pCodigo" style="color:darkred;font-size:14px;margin-top:1px; display:none;">•  Codigo no encotrado consulte el inventario</p><br /></div>
+            <div class="col-md-12 mx-auto" style="text-align:center"> <p id="informacionProducto" style="color:steelblue"></p></div>
+            <div class="col-md-12 row" id="divVentaProducto" style="display:none">
+                <div class="col-md-12"></div>
+                <div class="col-md-2"></div>
+                <div class="col-md-4 ">
+                    <label for="usr">Precio de Venta:</label>
+                    <input type="number" min="1" pattern="^[0-9]+" class="form-control" id="txtPresioProducto" placeholder="Precio de Venta" onchange="validarCode()" onkeyup="validarCode()">
+                </div>
+                <div class="col-md-4 ">
+                    <label for="usr">Cantidad:</label>
+                    <input type="number" min="1" pattern="^[0-9]+" class="form-control" id="txtCantidadProducto" placeholder="Cantidad" onchange="validarCode()" onkeyup="validarCode()">
+
+                </div>
+                <div class="col-md-12"><br /></div>
+                <div class="col-md-12 mx-auto">
+                    <center>
+
+                        <div class="alert alert-danger alert-dismissible fade show col-md-8" role="alert" id="alertError" style="display:none">
+                            <strong>Algo Salio Mal!</strong> <a id="texAlertError">La orden supero las unidades disponibles.</a>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <br />
+                        <button type="button" class="btn btn-primary" onclick="facturar()">Facturar</button>
+
+                    </center>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+        <div class="col-md-6 mx-auto">
+            <center>
+                <div class="alert alert-success alert-dismissible fade show " role="alert" id="alertBien" style="display:none">
+                    <strong>Bien!</strong> Venta Exitosa.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </center>
+        </div>
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 mx-auto">
+                       
+                        <p class="copyright text-muted">Copyright &copy; Santiago Perea Restrepo 2019</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Contact Form JavaScript -->
+        <script src="js/jqBootstrapValidation.js"></script>
+        <script src="js/contact_me.js"></script>
+
+        <!-- Custom scripts for this template -->
+        <script src="js/clean-blog.min.js"></script>
+        <!-- Controlador -->
+        <script src="js/Ventas.js"></script>
+</body>
+
+</html>

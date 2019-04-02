@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Inventario - Fox-Electronics</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Css -->
+    <link href="css/Inventario.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fox Electronics</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Administrador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ventas.html">Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Utilidades.html">Utilidades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/about-bg.png')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>Inventario</h1>
+                        <!--<span class="subheading">This is what I do.</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 mx-auto">
+
+                <center>
+                    <div class="col-md-6">
+
+                        <button type="button" class="btn btn-primary" onclick="addProducto()">Agregar Producto</button>
+                        <br />
+                    </div>
+                    <div class="col-md-6">
+                        <br />
+                        <div class="input-group">
+                            <input type="text" class="form-control" aria-label="Filtar" placeholder="Buscar" id="filtro">
+                            <div class="input-group-append" onclick="filtrar()" style="cursor:pointer">
+                                <span class="input-group-text"><i class="fas fa-search-plus"></i></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <br />
+                    </div>
+                </center>
+
+                <table class="table" id="stock">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Codigo</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Marca</th>
+                            <th scope="col">Precio de Compra</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="portfolio-modal modal fade" id="agregarProducto" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <form id="contactForm" name="sentMessage" novalidate>
+                        <div class="row">
+                            <div class="col-lg-12 ">
+                                <div class="modal-body row mx-auto">
+
+                                    <!-- Project Details Go Here -->
+                                    <div class="col-md-12 " style="text-align:center">
+                                        <h3 class="text-uppercase">Agregue y edite productos</h3>
+                                    </div>
+                                    <div class="col-md-12 " style="text-align:center">
+                                        <p class="item-intro text-muted">Porfavor complete todos los campos.</p>
+                                    </div>
+                                    <div class="col-md-12 "> </div>
+                                    <!--<center>-->
+                                    <div class="col-md-1 "> </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="usr">Codigo:</label>
+                                            <input type="text" class="form-control" placeholder="Codigo" id="txtcodigoP" required data-validation-required-message="Complete el campo.">
+                                            <p class="help-block"></p>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="form-group">
+                                            <label for="usr">Nombre:</label>
+                                            <input type="text" class="form-control" id="txtnombreP" placeholder="Nombre" required data-validation-required-message="Complete el campo.">
+                                            <p class="help-block "></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 "> </div>
+                                    <div class="col-md-1 "> </div>
+                                    <div class="col-md-5">
+                                        <div class="form-group">
+                                            <label for="usr">Marca:</label>
+                                            <input type="text" class="form-control" id="txtmarcaP" placeholder="Marca" required data-validation-required-message="Complete el campo.">
+                                            <p class="help-block "></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label for="usr">Precio de Compra:</label>
+                                            <input type="number" class="form-control" id="txtprecioP" placeholder="Precio de Compra" required data-validation-required-message="Complete el campo.">
+                                            <p class="help-block "></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="form-group">
+                                            <label for="usr">Cantidad:</label>
+                                            <input type="number" class="form-control" id="txtcantidadP" placeholder="Cantidad" required data-validation-required-message="Complete el campo.">
+                                            <p class="help-block "></p>
+                                        </div>
+                                    </div>
+                                    <!-- </center>-->
+                                    <div class="col-md-12 "> <br /></div>
+                                    <div class="col-md-12 ">
+                                        <center>
+                                            <button type="submit" class="btn btn-primary" id="sendMessageButton">
+                                                <i class="fas fa-save"></i>
+                                                <i id="ibtGuardar">Guardar</i>
+                                            </button>
+                                           
+                                        </center>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                   
+                    <p class="copyright text-muted">Copyright &copy; Santiago Perea Restrepo</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jqBootstrapValidation.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+    <!-- Controlador -->
+    <script src="js/Inventario.js"></script>
+</body>
+
+</html>

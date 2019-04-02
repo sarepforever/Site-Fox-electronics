@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Utilidades - Fox-Electronics</title>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Css -->
+    <link href="css/Utilidades.css" rel="stylesheet">
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Fox Electronics</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Administrador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inventario.html">Inventario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ventas.html">Ventas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Utilidades.html">Utilidades</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="page-heading">
+                        <h1>Utilidades</h1>
+                        <!--<span class="subheading">Have questions? I have answers.</span>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mx-auto" style="text-align:center">
+                    <h3> Calculadoras</h3>
+                    <!--<div class="btn-group btn-group-justified" role="group" aria-label="...">
+                        <button type="button" class="btn btn-default">Valor de Venta  Y Utilidad</button>
+
+                        <button type="button" class="btn btn-link">Valor de resistencia Electronica</button>
+                    </div>-->
+                </div>
+                <div class="col-md-12 row mx-auto" style="text-align:center">
+                    <div class="col-md-12">
+                        <h5> Valor de Venta Y Utilidad</h5>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="usr" style="font-size:14px;">Precio de Compra</label>
+                            <input type="number" class="form-control" id="txtprecioCPV" placeholder="Precio" required data-validation-required-message="Complete el campo.">
+                            <p class="help-block "></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="usr" style="font-size:14px;">% Utilidad</label>
+                            <input type="number" class="form-control" id="txtUtilidadPV" placeholder="% Utilidada" required data-validation-required-message="Complete el campo.">
+                            <p class="help-block "></p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="usr" style="font-size:14px;">% Iva</label>
+                            <input type="number" class="form-control" id="txtIvaPV" placeholder="% Iva" required data-validation-required-message="Complete el campo.">
+                            <p class="help-block "></p>
+                        </div>
+                    </div>
+                    <div class="col-md-12"></div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" onclick="calcularPreciVenta()">Calcular</button>
+                    </div>
+                    <div class="col-md-12"> <p class="help-block " id="pPrecioVenta"></p></div>
+
+
+                </div>
+                <div class="col-md-12 row mx-auto" style="text-align:center">
+                    <div class="col-md-12">
+                        <h5>Valor de resistencia Electronica</h5>
+                    </div>
+                    <div class="col-md-3"></div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default dropdown-toggle"id="btBanda1"
+                                data-toggle="dropdown">
+                            <span class="caret"> Banda 1</span>
+                            <span class="sr-only">Desplegar menú</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li  style="color:white;background-color:black;" onclick="banda1 = 0; colorBt('black','btBanda1')"><a>Negro</a></li>
+                            <li style="color:white;background-color:brown;" onclick="banda1=1; colorBt('brown','btBanda1')"><a >Cafe</a></li>
+                            <li style="color:white;background-color:red;" onclick="banda1=2; colorBt('red','btBanda1')"><a >Rojo</a></li>
+                            <li style="color:white;background-color:orange;" onclick="banda1=3; colorBt('orange','btBanda1')"><a >Naranja</a></li>
+                            <li style="color:white;background-color:yellow;" onclick="banda1=4; colorBt('yellow','btBanda1')"><a >Amarillo</a></li>
+                            <li style="color:white;background-color:green;" onclick="banda1=5; colorBt('green','btBanda1')"><a>Verde</a></li>
+                            <li style="color:white;background-color:blue;" onclick="banda1=6; colorBt('blue','btBanda1')"><a onclick="banda">azul</a></li>
+                            <li style="color:white;background-color:blueviolet;" onclick="banda1=7; colorBt('blueviolet','btBanda1')"><a>Violeta</a></li>
+                            <li style="color:white;background-color:gray;" onclick="banda1=8; colorBt('gray','btBanda1')"><a>Gris</a></li>
+                            <li style="color:black;background-color:white;" onclick="banda1=9; colorBt('white','btBanda1')"><a>Balnco</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default dropdown-toggle" id="btBanda2"
+                                data-toggle="dropdown">
+                            <span class="caret"> Banda 2</span>
+                            <span class="sr-only">Desplegar menú</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li style="color:white;background-color:black;" onclick="banda2 = 0; colorBt('black','btBanda2')"><a>Negro</a></li>
+                            <li style="color:white;background-color:brown;" onclick="banda2=1; colorBt('brown','btBanda2')"><a>Cafe</a></li>
+                            <li style="color:white;background-color:red;" onclick="banda2=2; colorBt('red','btBanda2')"><a>Rojo</a></li>
+                            <li style="color:white;background-color:orange;" onclick="banda2=3; colorBt('orange','btBanda2')"><a>Naranja</a></li>
+                            <li style="color:white;background-color:yellow;" onclick="banda2=4; colorBt('yellow','btBanda2')"><a>Amarillo</a></li>
+                            <li style="color:white;background-color:green;" onclick="banda2=5; colorBt('green','btBanda2')"><a>Verde</a></li>
+                            <li style="color:white;background-color:blue;" onclick="banda2=6; colorBt('blue','btBanda2')"><a onclick="banda">azul</a></li>
+                            <li style="color:white;background-color:blueviolet;" onclick="banda2=7; colorBt('blueviolet','btBanda2')"><a>Violeta</a></li>
+                            <li style="color:white;background-color:gray;" onclick="banda2=8; colorBt('gray','btBanda2')"><a>Gris</a></li>
+                            <li style="color:black;background-color:white;" onclick="banda2=9; colorBt('white','btBanda2')"><a>Balnco</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-default dropdown-toggle" id="btBanda3"
+                                data-toggle="dropdown">
+                            <span class="caret"> Banda 3</span>
+                            <span class="sr-only">Desplegar menú</span>
+                        </button>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li style="color:white;background-color:black;" onclick="banda3 = 10; colorBt('black','btBanda3')"><a>Negro</a></li>
+                            <li style="color:white;background-color:brown;" onclick="banda3=100; colorBt('brown','btBanda3')"><a>Cafe</a></li>
+                            <li style="color:white;background-color:red;" onclick="banda3=1000; colorBt('red','btBanda3')"><a>Rojo</a></li>
+                            <li style="color:white;background-color:orange;" onclick="banda3=10000; colorBt('orange','btBanda3')"><a>Naranja</a></li>
+                            <li style="color:white;background-color:yellow;" onclick="banda3=100000; colorBt('yellow','btBanda3')"><a>Amarillo</a></li>
+                            <li style="color:white;background-color:green;" onclick="banda3=1000000; colorBt('green','btBanda3')"><a>Verde</a></li>
+                            <li style="color:white;background-color:blue;" onclick="banda3=10000000; colorBt('blue','btBanda3')"><a onclick="banda">azul</a></li>
+                            <li style="color:white;background-color:blueviolet;" onclick="banda3=100000000; colorBt('blueviolet','btBanda3')"><a>Violeta</a></li>
+                            <li style="color:white;background-color:gray;" onclick="banda3=1000000000; colorBt('gray','btBanda3')"><a>Gris</a></li>
+                            <li style="color:black;background-color:white;" onclick="banda3=10000000000; colorBt('white','btBanda3')"><a>Balnco</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-12"><br /></div>
+                    <div class="col-md-5"></div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-primary" onclick="calcularResistencia()">Calcular</button>
+                    </div>
+                    <div class="col-md-12"> <p class="help-block " id="pvalorResistencia"></p></div>
+
+                   
+
+                </div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                   
+                    <p class="copyright text-muted">Copyright &copy; Santiago Perea Restrepo 2019</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+    <!-- Controlador -->
+    <script src="js/Utilidades.js"></script>
+</body>
+
+</html>
